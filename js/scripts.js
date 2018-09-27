@@ -1,15 +1,30 @@
 var blanks = ["item1", "item2", "item3", "item4"];
 
+var groceriesUpper = [];
+
 $(document).ready(function() {
   $("form#food").submit(function(event){
     event.preventDefault();
     $("form#food").hide();
 
-    var groceries = blanks.map(function(blank){
+    var groceriesLower = blanks.map(function(blank){
       return $("#" + blank).val();
     });
 
-    groceries.forEach(function(food){
+    console.log(groceriesLower);
+
+    var groceriesTemp = groceriesLower.map(function(item){
+      groceriesUpper.push(item.toUpperCase());
+    });
+    // groceriesUpper.push(groceriesLower.toUpperCase());
+    console.log(groceriesUpper);
+
+
+    // var groceriesUpper = groceriesLower.forEach(function(item){
+    //   return item.toUpperCase();
+    // })
+
+    groceriesUpper.forEach(function(food){
       $("ul#list").append("<li>" + food + "</li>");
     });
 
