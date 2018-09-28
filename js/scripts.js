@@ -1,7 +1,5 @@
 var blanks = ["item1", "item2", "item3", "item4"];
 
-var groceriesSorted = [];
-
 $(document).ready(function() {
   $("form#food").submit(function(event){
     event.preventDefault();
